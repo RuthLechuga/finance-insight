@@ -1,3 +1,6 @@
+/**
+ * Parsear información de factura
+ */
 export function parseInvoice(response: any) {
   const expenseDoc = response.ExpenseDocuments?.[0];
   if (!expenseDoc) return {};

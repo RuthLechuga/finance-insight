@@ -5,8 +5,6 @@ const sfnClient = new SFNClient({});
 const STATE_MACHINE_ARN = process.env.STATE_MACHINE_ARN;
 
 export const handler = async (event: S3Event): Promise<void> => {
-  console.log('S3 Event Received, starting Step Function execution...');
-
   const record = event.Records[0];
   const bucketName = record.s3.bucket.name;
   const objectKey = decodeURIComponent(record.s3.object.key.replace(/\+/g, ' '));
